@@ -14,6 +14,7 @@ import math
 
 
 def merge_sort(arr):
+    """Sort a list using the merge sort algorithm."""
     if len(arr) <= 1:
         return arr
     mid = len(arr) // 2
@@ -23,6 +24,7 @@ def merge_sort(arr):
 
 
 def _merge(left, right):
+    """Merge two sorted lists into a single sorted list."""
     result = []
     i = j = 0
     while i < len(left) and j < len(right):
@@ -38,6 +40,7 @@ def _merge(left, right):
 
 
 def binary_search(arr, target):
+    """Perform binary search on a sorted list. Return index or -1 if not found."""
     low, high = 0, len(arr) - 1
     while low <= high:
         mid = (low + high) // 2
@@ -51,6 +54,7 @@ def binary_search(arr, target):
 
 
 def is_prime(n):
+    """Check if a number is prime. Return True if prime, False otherwise."""
     if n < 2:
         return False
     if n < 4:
@@ -66,6 +70,7 @@ def is_prime(n):
 
 
 def matrix_multiply(a, b):
+    """Multiply two matrices a and b. Return the resulting matrix."""
     if len(a[0]) != len(b):
         raise ValueError("Incompatible matrix dimensions")
     rows_a, cols_b = len(a), len(b[0])
@@ -79,6 +84,7 @@ def matrix_multiply(a, b):
 
 
 def caesar_cipher(text, shift, decrypt=False):
+    """Encrypt or decrypt text using a Caesar cipher with the given shift."""
     if decrypt:
         shift = -shift
     result = []
@@ -93,12 +99,14 @@ def caesar_cipher(text, shift, decrypt=False):
 
 
 def calculate_distance(point1, point2):
+    """Calculate the Euclidean distance between two points in N-dimensional space."""
     if len(point1) != len(point2):
         raise ValueError("Points must have the same number of dimensions")
     return math.sqrt(sum((a - b) ** 2 for a, b in zip(point1, point2)))
 
 
 def flatten_dict(d, parent_key="", separator="."):
+    """Flatten a nested dictionary. Nested keys are joined by the separator."""
     items = []
     for k, v in d.items():
         new_key = f"{parent_key}{separator}{k}" if parent_key else k
