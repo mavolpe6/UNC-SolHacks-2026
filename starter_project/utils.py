@@ -14,10 +14,8 @@ def greet(name: str) -> str:
     return f"Welcome to SolHacks 2026, {name}! 🚀"
 
 
-# TODO: Add your utility functions below.
-# Some ideas to get started:
-#
-# - A function to validate user input
-# - A function to format data for display
-# - A function to read/write files
-# - A function to make HTTP requests
+def calculate_average(grades: list[float]) -> float:
+    """Calculates the average of a list of numbers."""
+    if not grades:
+        return 0.0
+    return sum(grades) / len(grades)
